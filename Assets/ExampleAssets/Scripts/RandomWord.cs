@@ -9,17 +9,23 @@ namespace Room
     {
         string[] list = {"Ping Pong", "Fly", "Bear", "Piano", "Chop", "Tree", "Snowball", "Penguin", "Nap", "Beg", "Rhinoceros", "Fetch", "Jog", "Cow", "Swimming", "Reading", "Cooking", "Cleaning", "Driving a Car", "Cleaning", "Boxing", "Opening a Door", "Shark", "Kangaroo", "Chicken", "Spider", "Monkey", "Bird", "Dog"};
         public Text screenText;
-        public GameObject theDisplay;
+        // public GameObject theDisplay;
 
-        string getRandomWord()
+        public void generateWord() {
+            Debug.Log("in generate word");
+            screenText.text = getRandomWord();
+        }
+
+        public string getRandomWord()
         {
             int random = (int)(Random.Range(0, list.Length));
             return list[random];
         }
+
         // Update is called once per frame
         void Update()
         {
-            screenText.text = getRandomWord();
+            // screenText.text = getRandomWord();
         }
     }
 }
